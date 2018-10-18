@@ -31,9 +31,19 @@ App({
           })
         }
       }
+    })  
+    var that = this //获取屏幕尺寸，放到全局结构中 
+    wx.getSystemInfo({
+      success: function (res) {
+        that.globalData.scHeight = res.windowHeight
+        that.globalData.scWidth = res.windowWidth
+      },
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+      scWidth: 0,            //全局的屏幕尺寸，已经去掉了上边的标题栏
+      scHeight: 0
+    
   }
 })

@@ -1,0 +1,23 @@
+<view class="wallet_homepage">
+<view class="icon"><image src="../images/boy.png"></image></view>
+<view class="text">Worker_01</view>
+<view class="mywallet">{{wallet}}</view>
+<button disabled="{{disabled}}" bindtap="oceanConnect" >查看任务</button>
+
+<view class='list-box'>
+    <view class='list-li mflex'  wx:for="{{list_data}}"  wx:key="index" >
+        <view class='list-img'><image src='{{item.imgUrl}}'></image></view>       
+        <view  class='list-tit'><text>{{item.id}}、{{item.title}}</text></view>    
+        <view class='list-con'><text>单价{{item.unitprice}}元/m²</text></view> 
+        <view class='list-adr'><text>{{item.city}}</text></view>    
+        <view class='list-tag'>
+            <text wx:for="{{item.tag}}" wx:for-item="cell" wx:key="index" >{{cell.tags}}</text>
+        </view>          
+    </view>
+</view>
+
+<view class="deposit">
+<text>{{deposit}}</text>
+<text style="color:#EB8A8B;" bindtap="returnDeposit">{{depositTitle}}</text>
+</view>
+</view>

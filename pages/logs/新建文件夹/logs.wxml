@@ -1,0 +1,24 @@
+<!--logs.wxml-->
+<!--    地图组件          -->
+<map 
+id="map" 
+longitude="{{longitude}}" 
+latitude="{{latitude}}" 
+scale="17" 
+controls="{{mapControls}}"
+bindcontroltap="controltap" 
+markers="{{markers}}" 
+bindmarkertap="mapMarker" 
+polyline="{{polyline}}" 
+circles="{{circles}}" 
+bindregionchange="regionchange" 
+show-location 
+style="width: 100%; height: 410px;">
+</map>
+
+<!--    操作选项          -->
+<form bindsubmit="openLocation">
+  <button type='primary' bindtap='locationClick'>定位位置</button>
+  <button type='primary' bindtap='selectedClick'>选择位置</button>
+  <button type='primary' bindtap='lineClick'>备用按钮</button>
+</form>

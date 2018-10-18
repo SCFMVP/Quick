@@ -1,0 +1,32 @@
+<!--pages/tasklist/tasklist.wxml-->
+<button disabled="{{disabled}}" bindtap="reFlash" >刷新任务</button>
+<view class='container'>
+  <!-- 订单列表 -->
+  <block wx:for-items="{{carInfoData}}">
+    <view class='card  b-shadow' bindtap='toggleBtn' id="{{item.id}}">
+      <view class='nearCard-fl'>
+        <image src='{{item.imgurl}}'></image>
+      </view>
+      <view class='nearCard-fr'>
+        <view>日期：
+          <text class='c-green'>{{item.useDate}}</text>
+        </view>
+        <view>设备：
+          <text class='c-green'>{{item.cx}}</text>
+        </view>
+        <view>消息：
+          <text class='c-green'>{{item.time}}</text>
+        </view>
+        <view>状态：
+          <text class='c-green'>{{item.feiyong}}</text>
+        </view>
+      </view>
+      <view class='down clearfix {{uhide==item.id?"":"hidden"}}'>
+        <view class='ml30'>启用时间：2018.10.28 11:33</view>
+        <view class='ml30'>结束时间：2018.10.28 11:33</view>
+        <view class='ml30'>具体位置：一号垃圾桶</view>
+        <view class='feedBack' bindtap="feedBack">问题反馈</view>
+      </view>
+    </view>
+  </block>
+</view>
